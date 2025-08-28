@@ -13,3 +13,7 @@ moviepy         # alternative to extract frames without cv2
 
 # Utilities
 numpy
+pandas
+# GCP access
+google-cloud-storage
+google-auth
