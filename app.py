@@ -9,12 +9,8 @@ import os
 
 #import logo
 # Path to logo in the same folder as app.py
-logo_path = os.path.join(os.path.dirname(__file__), "logo/when_ai_sees_litter_logo.png")
-
+logo_path = "logo/when_ai_sees_litter_logo.png"
 import base64
-
-# Path to logo in same folder as app.py
-logo_path = os.path.join(os.path.dirname(__file__), "logo/when_ai_sees_litter_logo.png")
 
 # Read and convert to base64
 with open(logo_path, "rb") as f:
