@@ -3,16 +3,45 @@ import streamlit as st
 from PIL import Image
 import tempfile
 import cv2
-
+import os
 # Load model
 #model = torch.load("model.pth")
 
-st.title("When AI Sees Litter App")
+#import logo
+# Path to logo in the same folder as app.py
+logo_path = os.path.join(os.path.dirname(__file__), "logo/when_ai_sees_litter_logo.png")
 
-# Example: simple input
-user_input = st.text_input("Enter some text or number:")
+import base64
 
-st.title("📸 Media Input App")
+# Path to logo in same folder as app.py
+logo_path = os.path.join(os.path.dirname(__file__), "logo/when_ai_sees_litter_logo.png")
+
+# Read and convert to base64
+with open(logo_path, "rb") as f:
+    logo_bytes = f.read()
+logo_b64 = base64.b64encode(logo_bytes).decode("utf-8")
+
+# Inject HTML + CSS to place it top-right
+st.markdown(
+    f"""
+    <style>
+    .top-right {{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }}
+    </style>
+    <div class="top-right">
+        <img src="data:image/png;base64,{logo_b64}" width="120">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Main content
+st.title("When AI Sees Litter")
+st.write("An app to help beginners identify and handle trash responsibly 🌱")
+st.subheader("📸 Identify Your Litter Now!")
 
 # Dropdown selection
 option = st.selectbox(
@@ -25,7 +54,7 @@ if option == "Capture Photo (Webcam)":
     camera_photo = st.camera_input("Take a picture")
     if camera_photo is not None:
         img = Image.open(camera_photo)
-        st.image(img, caption="Captured Photo", use_column_width=True)
+        st.image(img, caption="Captured Photo", use_container_width=True)
         st.success("✅ Photo captured successfully!")
 
 # --- Option 2: Upload Image ---
