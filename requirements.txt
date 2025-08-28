@@ -1,10 +1,15 @@
-streamlit==1.49.0
-ultralytics==8.3.187
-torch==2.6.0
-torchvision==0.21.0
+# Core
+streamlit
 pillow
-numpy==2.3.2
-pandas
-opencv-python-headless
-google-cloud-storage
-google-auth
+
+# ML / DL
+torch
+torchvision
+torchaudio
+
+# Image/Video handling
+opencv-python   # for reading video frames
+moviepy         # alternative to extract frames without cv2
+
+# Utilities
+numpy
