@@ -8,7 +8,7 @@ torchvision
 torchaudio
 
 # Image/Video handling
-opencv-python   # for reading video frames
+opencv-python-headless
 moviepy         # alternative to extract frames without cv2
 
 # Utilities
