@@ -1,6 +1,5 @@
 import streamlit as st
 #import joblib
-import torch
 
 
 # Load model
