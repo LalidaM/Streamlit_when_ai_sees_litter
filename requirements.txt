@@ -1,7 +1,7 @@
 # Core
 streamlit
 pillow
-
+ultralytics
 # ML / DL
 torch
 torchvision
@@ -14,6 +14,9 @@ moviepy         # alternative to extract frames without cv2
 # Utilities
 numpy
 pandas
+pillow
+numpy
+requests
 # GCP access
 google-cloud-storage
 google-auth
