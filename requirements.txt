@@ -1,13 +1,9 @@
-# Core
 streamlit
-pillow
 ultralytics
-
-# Utilities
+torch
+torchvision
+opencv-python-headless>=4.8.0.74,<5.0
+pillow
 numpy
 pandas
 requests
-
-# GCP access (only if needed)
-google-cloud-storage
-google-auth
