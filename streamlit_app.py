@@ -305,6 +305,15 @@ def _get_names_map(pred, model):
 def _closest_size(target: int, options: list[int]) -> int:
     return min(options, key=lambda x: abs(x - target))
 
+# ======================= Header + City selector =======================
+logo_col, title_col = st.columns([3, 5], vertical_alignment="center")
+with logo_col:
+    if os.path.exists("logo.png"):
+        st.image("logo.png", use_container_width=True)
+with title_col:
+    st.markdown("<div style='font-weight:800; font-size:1.6rem; line-height:1.2'>When AI Sees Litter </div>", unsafe_allow_html=True)
+
+
 # ======================= Hero =======================
 st.markdown("""
 <div class="hero">
@@ -393,22 +402,12 @@ def show_guidance_card(label: str, count: int = 0):
 # ======================= QUICK DETECT (TOP) =======================
 st.markdown('<div class="section">', unsafe_allow_html=True)
 st.markdown("#### How to use")
-# ======================= Header + City selector =======================
-logo_col, title_col = st.columns([3, 5], vertical_alignment="center")
-with logo_col:
-    if os.path.exists("logo.png"):
-        st.image("logo.png", use_container_width=True)
-with title_col:
-    st.markdown("<div style='font-weight:800; font-size:1.6rem; line-height:1.2'>When AI Sees Litter </div>", unsafe_allow_html=True)
-
 # City selection (mock for now)
-st.markdown('<div class="section">', unsafe_allow_html=True)
 c1, c2 = st.columns([2, 6], vertical_alignment="center")
 with c1:
     city_label = st.selectbox("City / Ward", ["Shibuya (Tokyo)"], index=0)
 with c2:
     st.markdown("<div class='citybadge'>More cities coming soon</div>", unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # Resolve city id and guide map
 CITY_MAP = {"Shibuya (Tokyo)": "shibuya"}
@@ -416,7 +415,7 @@ city_id = CITY_MAP[city_label]
 GUIDE = GUIDE_BY_CITY.get(city_id, {})
 st.markdown("""
 <ol class="howto">
-  <li>Select <b>Upload image</b> (or open your <b>Camera</b>).</li>
+  <li><b>Upload image</b> (or open your <b>Camera</b>).</li>
   <li>Tap <b>Run detection</b>.</li>
   <li>Follow the card(s) below for disposal steps — tailored to your selected city.</li>
 </ol>
