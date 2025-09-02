@@ -84,8 +84,8 @@ def apply_agri_theme():
 apply_agri_theme()
 
 # ======================= Config & Model =======================
-MODEL_URL     = os.getenv("MODEL_URL", "https://raw.githubusercontent.com/Bellzum/streamlit-main/blob/main/yolo_litterv1.pt")
-LOCAL_MODEL   = os.getenv("LOCAL_MODEL", "best.pt")
+MODEL_URL     = os.getenv("MODEL_URL", "https://raw.githubusercontent.com/Bellzum/streamlit-main/main/yolo_litterv1.pt")
+
 CACHED_PATH   = "/tmp/models/best.pt"
 DEFAULT_IMGSZ = int(os.getenv("IMGSZ", "640"))
 
@@ -564,6 +564,12 @@ st.markdown(
 )
 
 st.markdown("**Our SDGs focus:**")
+# SDG icon images (official UN icons)
+SDG_11 = "https://sdgs.un.org/sites/default/files/2020-09/SDG-11.png"
+SDG_12 = "https://sdgs.un.org/sites/default/files/2020-09/SDG-12.png"
+SDG_13 = "https://sdgs.un.org/sites/default/files/2020-09/SDG-13.png"
+SDG_14 = "https://sdgs.un.org/sites/default/files/2020-09/SDG-14.png"
+
 sdg_html = f"""
 <div class="sdg-row">
   <div class="sdg-card">
