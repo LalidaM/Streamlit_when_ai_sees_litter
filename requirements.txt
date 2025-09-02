@@ -3,22 +3,11 @@ streamlit
 pillow
 ultralytics
 
-# ML / DL
-torch
-torchvision
-torchaudio
-
-# Image/Video handling
-opencv-python-headless
-moviepy         # alternative to extract frames without cv2
-
 # Utilities
 numpy
 pandas
-pillow
-numpy
 requests
 
-# GCP access
+# GCP access (only if needed)
 google-cloud-storage
 google-auth
